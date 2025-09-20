@@ -29,7 +29,7 @@ app.use(express.json());
 
 // ✅ Configuración de CORS
 app.use(cors({
-  origin: "https://trivia-front-web.vercel.app/",  // el puerto de tu frontend
+  origin: "http://localhost:5173",  // el puerto de tu frontend
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
@@ -45,7 +45,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/games", gamesRoutes);
 app.use("/api/admin", adminRoutes);
 app.use(cors({
-  origin: "https://trivia-front-web.vercel.app/", // el puerto donde corre tu React (Vite por defecto es 5173)
+  origin: "http://localhost:5173", // el puerto donde corre tu React (Vite por defecto es 5173)
   credentials: true
 }));
 app.use(express.json());
